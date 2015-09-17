@@ -1,0 +1,4 @@
+alias ll="ls -l"
+alias la="ls -a"
+alias api="sudo apt-get install -y"
+alias apu="sudo apt-get update && sudo apt-get upgrade -y"
