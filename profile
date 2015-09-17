@@ -29,3 +29,4 @@ fi
 
 set -o vi
 source .linux_settings/aliases
+source .linux_settings/ls_colors

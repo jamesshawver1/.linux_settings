@@ -1,3 +1,5 @@
+"fixes copy and paste issues
+set paste
 set expandtab
 set tabstop=4
 set shiftwidth=4
@@ -8,6 +10,9 @@ set smarttab
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
+
+let g:tex_flavor='latex'
+syntax enable
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -34,3 +39,19 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+
+"enables backspace to work like its supposed to 
+set backspace=indent,eol,start
+
+let g:BASH_Ctrl_j = 'off'
+let g:C_Ctrl_j = 'off'
+"split screen mapping
+nnoremap <C-K> <C-W>k
+nnoremap <C-J> <C-W>j
+nnoremap <C-L> <C-W>l
+nnoremap <C-H> <C-W>h
+
+"goto last position in file from close
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
